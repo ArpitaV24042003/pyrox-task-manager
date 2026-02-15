@@ -11,7 +11,9 @@ function App() {
 
   useEffect(() => {
     const fetchTasks = async () => {
-      const response = await fetch("http://localhost/task-api/read.php");
+      const response = await fetch(
+        "https://pyroxytask.infinityfreeapp.com/read.php",
+      );
       const data = await response.json();
       setTasks(data);
     };
@@ -23,8 +25,8 @@ function App() {
     if (!title.trim()) return;
 
     const url = editId
-      ? "http://localhost/task-api/update.php"
-      : "http://localhost/task-api/create.php";
+      ? "https://pyroxytask.infinityfreeapp.com/update.php"
+      : "https://pyroxytask.infinityfreeapp.com/create.php";
 
     const body = editId ? { id: editId, title } : { title };
 
@@ -40,7 +42,7 @@ function App() {
   };
 
   const deleteTask = async (id) => {
-    await fetch("http://localhost/task-api/delete.php", {
+    await fetch("https://pyroxytask.infinityfreeapp.com/delete.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id }),
@@ -57,15 +59,18 @@ function App() {
   const saveNotification = async () => {
     if (!phone || !message || !time) return;
 
-    await fetch("http://localhost/task-api/notification_create.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        phone_number: phone,
-        message_content: message,
-        scheduled_time: time,
-      }),
-    });
+    await fetch(
+      "https://pyroxytask.infinityfreeapp.com/notification_create.php",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          phone_number: phone,
+          message_content: message,
+          scheduled_time: time,
+        }),
+      },
+    );
 
     setPhone("");
     setMessage("");
