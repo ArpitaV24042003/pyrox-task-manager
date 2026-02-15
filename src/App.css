@@ -1,0 +1,140 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* BODY CENTERING + BACKGROUND */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+/* MAIN CARD */
+.card {
+  width: 100%;
+  max-width: 550px;
+  background: #1f2937;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* HEADINGS */
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* INPUT GROUP */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* INPUT FIELDS */
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #374151;
+  color: white;
+  transition: 0.3s;
+}
+
+input:focus {
+  background-color: #4b5563;
+}
+
+/* BUTTONS */
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #10b981;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* TASK LIST */
+ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+li {
+  background: #374151;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+li:hover {
+  background: #4b5563;
+}
+
+/* ACTION BUTTONS */
+li button {
+  background: #3b82f6;
+  margin-left: 5px;
+}
+
+li button:last-child {
+  background: #ef4444;
+}
+
+/* NOTIFICATION BUTTON */
+.notify-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #8b5cf6;
+}
+
+/* DIVIDER */
+hr {
+  border: none;
+  height: 1px;
+  background: #4b5563;
+  margin: 20px 0;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
